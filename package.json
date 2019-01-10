@@ -1,29 +1,29 @@
 {
-  "name": "bitmap-transformer",
+  "name": "memory-db",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
+  "dependencies": {
+    "eslint": "^5.12.0",
+    "jest": "^23.6.0",
+    "shortid": "^2.2.14"
   },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint .",
     "pretest": "npm run lint"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tylercorbett/bitmap-transformer.git"
+    "url": "git+https://github.com/tylercorbett/memory-db.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tylercorbett/bitmap-transformer/issues"
+    "url": "https://github.com/tylercorbett/memory-db/issues"
   },
-  "homepage": "https://github.com/tylercorbett/bitmap-transformer#readme",
-  "dependencies": {
-    "eslint": "^5.12.0"
-  }
+  "homepage": "https://github.com/tylercorbett/memory-db#readme"
 }
