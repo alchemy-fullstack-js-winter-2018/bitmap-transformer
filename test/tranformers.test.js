@@ -4,36 +4,36 @@ const grayscale = require('../lib/grayscale-transformer');
 
 describe('transformers', () => {
 
-    it('invert', () => {
-        // HINT: invert subtracts each value from 255
-        const transformed = invert({
-            r: 34,
-            g: 100,
-            b: 205
-        });
-
-        assert.deepEqual(transformed, {
-            r: 221,
-            g: 155,
-            b: 50
-        });
+  it('invert', () => {
+    // HINT: invert subtracts each value from 255
+    const transformed = invert({
+      r: 34,
+      g: 100,
+      b: 205
     });
 
-    it('grayscale', () => {
-        // HINT: grayscale assigns the average of all three colors
-        // as the new value for each color
-        const transformed = grayscale({
-            r: 34,
-            g: 100,
-            b: 205
-        });
+    assert.deepEqual(transformed, {
+      r: 221,
+      g: 155,
+      b: 50
+    });
+  });
 
-        assert.deepEqual(transformed, {
-            r: 113,
-            g: 113,
-            b: 113
-        });
+  it('grayscale', () => {
+    // HINT: grayscale assigns the average of all three colors
+    // as the new value for each color
+    const transformed = grayscale({
+      r: 34,
+      g: 100,
+      b: 205
     });
 
-    // TODO: add a third transformer (you'll need to add the module and require!) and test
+    assert.deepEqual(transformed, {
+      r: 113,
+      g: 113,
+      b: 113
+    });
+  });
+
+  // TODO: add a third transformer (you'll need to add the module and require!) and test
 });
