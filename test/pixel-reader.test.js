@@ -1,18 +1,17 @@
 const PixelReader = require('../lib/pixel-reader');
 
 describe('Pixel Reader', () => {
-
   it('reads pixel from buffer', done => {
-    const reader = new PixelReader({ bitsPerPixel: 24 });
-        
+    const reader = new PixelReader({ bitsPerPixel: 24 });  
     const colors = [];
+
     reader.on('color', color => {
       colors.push(color);
     });
    
     reader.on('end', () => {
       expect(colors).toHaveLength(3);
-      
+
       expect(colors[0]).toEqual({
         offset: 0,
         r: 0,
@@ -53,6 +52,5 @@ describe('Pixel Reader', () => {
 
     reader.read(buffer);
   });
-
 });
 
