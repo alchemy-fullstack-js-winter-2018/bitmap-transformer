@@ -55,21 +55,21 @@ describe('Pixel Reader', () => {
         // expected test colors
 
         // first color black
-        buffer.writeUInt8(0);
-        buffer.writeUInt8(0);
-        buffer.writeUInt8(0);
+        buffer.writeUInt8(0, 0);
+        buffer.writeUInt8(0, 1);
+        buffer.writeUInt8(0, 2);
 
         // second color white
         // #FFFFFF
-        buffer.writeUInt8(255);
-        buffer.writeUInt8(255);
-        buffer.writeUInt8(255);
+        buffer.writeUInt8(255, 3);
+        buffer.writeUInt8(255, 4);
+        buffer.writeUInt8(255, 5);
 
         // third color red
         // #FF0000
-        buffer.writeUInt8(0);
-        buffer.writeUInt8(0);
-        buffer.writeUInt8(255);
+        buffer.writeUInt8(0, 6);
+        buffer.writeUInt8(0, 7);
+        buffer.writeUInt8(255, 8);
 
         // Call read method with your buffer
         reader.read(buffer);

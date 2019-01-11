@@ -8,6 +8,7 @@ describe('bitmap file transformer', () => {
     
   let buffer = null;
   beforeEach(() => {
+    buffer = readFileSync('./test/test-bitmap.bmp')
     // TODO: file read sync './test/test-bitmap.bmp' into buffer variable
   });
 
