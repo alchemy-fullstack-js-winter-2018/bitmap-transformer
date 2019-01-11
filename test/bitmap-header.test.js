@@ -17,9 +17,9 @@ describe('bitmap header', () => {
     // TODO: read the wiki spec docs to figure out what these values should be.
     // You don't need to change this test, you need to put the correct values into
     // '../lib/bitmap-constants'
-        expect(constants.PIXEL_OFFSET).toBeUndefined();
-        expect(constants.BITS_PER_PIXEL_OFFSET).toBeUndefined();
-        expect(constants.FILE_SIZE_OFFSET).toBeUndefined();
+        expect(constants.PIXEL_OFFSET).toEqual(10);
+        expect(constants.BITS_PER_PIXEL_OFFSET).toEqual(28);
+        expect(constants.FILE_SIZE_OFFSET).toEqual(2);
     });
 
     it('parses header data', () => {
@@ -27,8 +27,8 @@ describe('bitmap header', () => {
     // on the BitmapHeader in its constructor.
     // These test values are correct for the supplied test-bitmap.bmp
         const header = new BitmapHeader(buffer);
-        expect(header.pixelOffset, 54);
-        expect(header.bitsPerPixel, 24);
-        expect(header.fileSize, 30054);
+        expect(header.pixelOffset).toEqual(54);
+        expect(header.bitsPerPixel).toEqual(24);
+        expect(header.fileSize).toEqual(30054);
     });
 });
