@@ -40,7 +40,7 @@ describe('Pixel Reader', () => {
 
     // first color is black
     // #000000
-    buffer.writeUInt8(0);
+    buffer.writeUInt8(0, 0);
     buffer.writeUInt8(0, 1);
     buffer.writeUInt8(0, 2);
 
