@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 const assert = require('assert');
 const constants = require('../lib/bitmap-constants');
 const BitmapHeader = require('../lib/bitmap-header');
