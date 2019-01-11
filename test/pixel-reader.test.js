@@ -35,7 +35,7 @@ describe('Pixel Reader', () => {
         b: 255
       });
 
-      reader.read(buffer);
+      
       done();
     });
 
@@ -56,7 +56,7 @@ describe('Pixel Reader', () => {
     buffer.writeUInt8(0, 8);
     // Call read method with your buffer
     reader.read(buffer);
-    done();
+
   });
 
 });
