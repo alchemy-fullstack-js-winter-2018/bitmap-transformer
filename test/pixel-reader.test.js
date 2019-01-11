@@ -77,7 +77,7 @@ describe('Pixel Reader', () => {
     buffer.writeUInt8(255, 6);
     buffer.writeUInt8(0, 7);
     buffer.writeUInt8(0, 8);
-    // Call read method with your buffer
+    
     reader.read(buffer);
   });
 

@@ -48,7 +48,4 @@ describe('transformers', () => {
       b: 113
     });
   });
-
-
-  // TODO: add a third transformer (you'll need to add the module and require!) and test
 });
