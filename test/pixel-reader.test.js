@@ -1,4 +1,3 @@
-//const assert = require('assert');
 const PixelReader = require('../lib/pixel-reader');
 
 describe('Pixel Reader', () => {
@@ -44,17 +43,17 @@ describe('Pixel Reader', () => {
     const buffer = Buffer.alloc(9); // for three pixels
     // TODO: fill buffer with byte values that match your 
     // expected test colors
-    buffer.writeUInt8(0);  //  black
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
+    buffer.writeUInt8(0, 0);  //  black
+    buffer.writeUInt8(0, 1);
+    buffer.writeUInt8(0, 2);
 
-    buffer.writeUInt8(255); //white
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(255);
+    buffer.writeUInt8(255, 3); //white
+    buffer.writeUInt8(255, 4);
+    buffer.writeUInt8(255, 5);
 
-    buffer.writeUInt8(0); // red
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(255);
+    buffer.writeUInt8(255, 6); // red
+    buffer.writeUInt8(0, 7);
+    buffer.writeUInt8(0, 8);
     // Call read method with your buffer
     reader.read(buffer);
     done();
