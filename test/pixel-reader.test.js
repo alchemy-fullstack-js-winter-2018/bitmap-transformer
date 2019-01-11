@@ -6,14 +6,37 @@ describe('Pixel Reader', () => {
         const reader = new PixelReader({ bitsPerPixel: 24 });
         
         const colors = [];
+        // example?
+        /*
+        [0, 0, 0, 255, 255, 255, 255, 0, 0]
 
+        {
+            offset: 0,
+            b: 0,
+            g: 0,
+            r: 0
+        }
+
+        {
+            offset: 3,
+            b: 255,
+            g: 255,
+            r: 255
+        }
+
+        {
+            offset: 6,
+            b: 255,
+            g: 0,
+            r: 0
+        }
+        */
         const colorObj = {
             offset: 0, 
             r: 0,
             g: 0,
             b: 0
         };
-        colors.push(colorObj);
 
         reader.on('color', colorObj=> {
             colors.push(colorObj);
