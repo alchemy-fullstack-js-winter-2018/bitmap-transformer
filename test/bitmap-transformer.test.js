@@ -2,6 +2,7 @@ const assert = require('assert');
 const { readFileSync } = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
+const grayscale = ('require/lib/grayscale-transformer');
 
 describe('bitmap file transformer', () => {
     

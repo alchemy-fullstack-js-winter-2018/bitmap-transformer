@@ -13,7 +13,7 @@ describe('transformers', () => {
             b: 205
         });
 
-        expect.deepEqual(transformed, {
+        expect(transformed).toEqual( {
             r: 221,
             g: 155,
             b: 50
@@ -27,9 +27,10 @@ describe('transformers', () => {
             r: 34,
             g: 100,
             b: 205
+        
         });
 
-        expect.deepEqual(transformed, {
+        expect(transformed).toEqual( {
             r: 113,
             g: 113,
             b: 113
