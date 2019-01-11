@@ -8,27 +8,58 @@ describe('Pixel Reader', () => {
         
         const colors = [];
 
-        // TODO: subscribe to reader "color" event and push into `colors` array.
-        // A "color" object should look like:
-        // {
-        //     offset: <offset from the start of buffer passed to PixelReader>,
-        //     r: <red color value>,
-        //     g: <green color value>,
-        //     b: <blue color value>,
-        // }
+        const colorObj = {
+            offset: 0, 
+            r: 0,
+            g: 0,
+            b: 0
+        };
+        colors.push(colorObj);
 
+        reader.read();
+        reader.on('color', colorObj=> {
+            colors.push(colorObj);
+
+        });
         reader.on('end', () => {
-            // write deepEqual assertion for colors versus the
-            // expected rgb color objects
-
-            // Don't forget to call done()!
+            expect(colors).toHaveLength(3);
+            expect(colors[0]).toEqual({
+                offset: 0,
+                r: 0, 
+                g: 0, 
+                b: 0
+            });
+            expect(colors[1]).toEqual({
+                offset: 24,
+                r: 255, 
+                g: 255, 
+                b: 255
+            });
+            expect(colors[2]).toEqual({
+                offset: 48,
+                r: 0, 
+                g: 0, 
+                b: 255
+            });
+            done();
         });
 
         // Create a buffer with known data for your colors
         const buffer = Buffer.alloc(24 * 3); // for three pixels
         // TODO: fill buffer with byte values that match your 
         // expected test colors
-
+        //BLACK
+        buffer.writeUInt8(0);
+        buffer.writeUInt8(0);
+        buffer.writeUInt8(0);
+        //white
+        buffer.writeUInt8(255);
+        buffer.writeUInt8(255);
+        buffer.writeUInt8(255);
+        // BLUE
+        buffer.writeUInt8(255);
+        buffer.writeUInt8(0);
+        buffer.writeUInt8(0);
         // Call read method with your buffer
         reader.read(buffer);
     });
