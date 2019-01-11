@@ -27,7 +27,7 @@ describe('transformers', () => {
             b: 205
         });
 
-        assert.deepEqual(transformed, {
+        expect(transformed).toEqual({
             r: 113,
             g: 113,
             b: 113
