@@ -52,4 +52,3 @@ describe('Pixel Reader', () => {
     reader.read(buffer);
   });
 });
-
