@@ -13,9 +13,6 @@ describe('bitmap header', () => {
   });
 
   it('has correct specs', () => {
-    // TODO: read the wiki spec docs to figure out what these values should be.
-    // You don't need to change this test, you need to put the correct values into
-    // '../lib/bitmap-constants'
     expect(constants.PIXEL_OFFSET).toBeDefined();
     expect(constants.BITS_PER_PIXEL_OFFSET).toBeDefined();
     expect(constants.FILE_SIZE_OFFSET).toBeDefined();
