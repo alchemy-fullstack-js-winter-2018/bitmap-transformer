@@ -31,15 +31,9 @@ describe('Pixel Reader', () => {
             r: 0
         }
         */
-        const colorObj = {
-            offset: 0, 
-            r: 0,
-            g: 0,
-            b: 0
-        };
 
-        reader.on('color', colorObj=> {
-            colors.push(colorObj);
+        reader.on('color', color=> {
+            colors.push(color);
 
         });
         reader.on('end', () => {
@@ -71,16 +65,16 @@ describe('Pixel Reader', () => {
         // expected test colors
         //BLACK
         buffer.writeUInt8(0);
-        buffer.writeUInt8(0);
-        buffer.writeUInt8(0);
+        buffer.writeUInt8(0, 1);
+        buffer.writeUInt8(0, 2);
         //white
-        buffer.writeUInt8(255);
-        buffer.writeUInt8(255);
-        buffer.writeUInt8(255);
+        buffer.writeUInt8(255, 3);
+        buffer.writeUInt8(255, 4);
+        buffer.writeUInt8(255, 5);
         // BLUE
-        buffer.writeUInt8(255);
-        buffer.writeUInt8(0);
-        buffer.writeUInt8(0);
+        buffer.writeUInt8(255, 6);
+        buffer.writeUInt8(0, 7);
+        buffer.writeUInt8(0, 8);
         // Call read method with your buffer
         reader.read(buffer);
     });
