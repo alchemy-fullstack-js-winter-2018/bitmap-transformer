@@ -2,7 +2,7 @@ const assert = require('assert');
 const { readFileSync } = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
-const PixelReader = require('../lib/pixel-reader');
+// const PixelReader = require('../lib/pixel-reader');
 
 describe('bitmap file transformer', () => {
     
