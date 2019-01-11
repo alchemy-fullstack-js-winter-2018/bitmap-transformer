@@ -1,5 +1,3 @@
-/*
-const assert = require('assert');
 const invert = require('../lib/invert-transformer');
 const grayscale = require('../lib/grayscale-transformer');
 
@@ -13,7 +11,7 @@ describe('transformers', () => {
       b: 205
     });
 
-    assert.deepEqual(transformed, {
+    expect(transformed).toEqual({
       r: 221,
       g: 155,
       b: 50
@@ -29,7 +27,7 @@ describe('transformers', () => {
       b: 205
     });
 
-    assert.deepEqual(transformed, {
+    expect(transformed).toEqual({
       r: 113,
       g: 113,
       b: 113
@@ -39,4 +37,3 @@ describe('transformers', () => {
   // TODO: add a third transformer (you'll need to add the module and require!) and test
 });
 
-*/

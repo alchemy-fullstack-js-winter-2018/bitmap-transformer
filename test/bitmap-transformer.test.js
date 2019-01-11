@@ -1,4 +1,5 @@
-/*const assert = require('assert');
+/*
+const assert = require('assert');
 const { readFileSync } = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transform');
