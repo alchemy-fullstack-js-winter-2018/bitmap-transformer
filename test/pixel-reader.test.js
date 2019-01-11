@@ -31,14 +31,14 @@ describe('Pixel Reader', () => {
       // write deepEqual assertion for colors versus the
       // expected rgb color objects
       expect(colors[1]).toEqual ({
-        offset: 24, 
+        offset: 3, 
         r: 255, 
         g: 255,
         b: 255
       });
 
       expect(colors[2]).toEqual ({
-        offset: 48, 
+        offset: 6, 
         r: 0, 
         g: 0,
         b: 255
