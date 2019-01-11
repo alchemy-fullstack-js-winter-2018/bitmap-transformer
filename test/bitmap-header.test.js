@@ -4,7 +4,7 @@ const BitmapHeader = require('../lib/bitmap-header');
 describe('bitmap header', () => {
 
     let buffer = null;
-    beforeEach(() => {
+    beforeEach( done => {
     // TODO: file read './test/test-bitmap.bmp' and put the promise return into buffer variable
     });
 
