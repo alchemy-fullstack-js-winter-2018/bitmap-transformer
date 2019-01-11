@@ -1,4 +1,4 @@
-const pink = require('../lib/warm-transformer');
+const warmer = require('../lib/warm-transformer');
 const invert = require('../lib/invert-transformer');
 const grayscale = require('../lib/grayscale-transformer');
 
@@ -20,8 +20,6 @@ describe('transformers', () => {
   });
 
   it('grayscale', () => {
-    // HINT: grayscale assigns the average of all three colors
-    // as the new value for each color
     const transformed = grayscale({
       r: 34,
       g: 100,
@@ -35,15 +33,15 @@ describe('transformers', () => {
     });
   });
 
-  it('changes color to pink', () => {
-    const transformed = pink({
-      r: 34,
+  it('makes color warmer', () => {
+    const transformed = warmer({
+      r: 10,
       g: 100,
       b: 205
     });
 
     expect(transformed).toEqual({
-      r: 134,
+      r: 255,
       g: 155,
       b: 50
     });
