@@ -62,35 +62,21 @@ describe('Pixel Reader', () => {
       });
      
       done();
-      // write deepEqual assertion for colors versus the
-      // expected rgb color objects
-
-      // Don't forget to call done()!
     });
+    const buffer = Buffer.alloc(9); 
 
-    // Create a buffer with known data for your colors
-    const buffer = Buffer.alloc(9); // for three pixels
-    // TODO: fill buffer with byte values that match your 
-    // expected test colors
+    buffer.writeUInt8(0, 0);
+    buffer.writeUInt8(0, 1);
+    buffer.writeUInt8(0, 2);
 
-    // first color is black
-    // #000000
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
+    buffer.writeUInt8(255, 3);
+    buffer.writeUInt8(255, 4);
+    buffer.writeUInt8(255, 5);
 
-
-    // second color is white
-    // #FFFFFF
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(255);
-
-    // third color is blue
-    // #FF0000
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
+  
+    buffer.writeUInt8(255, 6);
+    buffer.writeUInt8(0, 7);
+    buffer.writeUInt8(0, 8);
     // Call read method with your buffer
     reader.read(buffer);
   });
