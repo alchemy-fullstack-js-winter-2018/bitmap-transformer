@@ -5,11 +5,13 @@
   "main": "index.js",
   "directories": {
     "lib": "lib",
-    "test": "jest",
-    "test:watch": "jet --watch"
+    "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
