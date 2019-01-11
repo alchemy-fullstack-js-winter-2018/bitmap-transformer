@@ -1,5 +1,6 @@
 const invert = require('../lib/invert-transformer');
 const grayscale = require('../lib/grayscale-transformer');
+
 // const expect = require('expect');
 
 describe('transformers', () => {
