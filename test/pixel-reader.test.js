@@ -31,27 +31,25 @@ describe('Pixel Reader', () => {
         offset: 6,
         r:0,
         g:0,
-        b:225
+        b:255
       });
       done();
     });
-
-    // Create a buffer with known data for your colors
+    
     const buffer = Buffer.alloc(9);
     
     buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
+    buffer.writeUInt8(0, 1);
+    buffer.writeUInt8(0, 2);
 
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(255);
+    buffer.writeUInt8(255, 3);
+    buffer.writeUInt8(255, 4);
+    buffer.writeUInt8(255, 5);
 
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
+    buffer.writeUInt8(255, 6);
+    buffer.writeUInt8(0, 7);
+    buffer.writeUInt8(0, 8);
 
-    // Call read method with your buffer
     reader.read(buffer);
   });
 
