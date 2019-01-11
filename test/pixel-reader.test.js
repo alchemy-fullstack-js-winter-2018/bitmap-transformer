@@ -6,7 +6,26 @@ describe('Pixel Reader', () => {
     const reader = new PixelReader({ bitsPerPixel: 24 });
         
     const colors = [];
+    [0, 0, 0, 255, 255, 255, 255, 0, 0];
 
+    // {
+    //   offset: 0,
+    //   b: 0,
+    //   g: 0,
+    //   r: 0
+    // }
+    // {
+    //   offset: 3,
+    //   b: 255,
+    //   g: 255,
+    //   r: 255
+    // }
+    // {
+    //   offset: 0,
+    //   b: 255,
+    //   g: 0,
+    //   r: 0
+    // }
 
     reader.on('color', (color) => {
       colors.push(color);
@@ -50,7 +69,7 @@ describe('Pixel Reader', () => {
     });
 
     // Create a buffer with known data for your colors
-    const buffer = Buffer.alloc(24 * 3); // for three pixels
+    const buffer = Buffer.alloc(9); // for three pixels
     // TODO: fill buffer with byte values that match your 
     // expected test colors
 
