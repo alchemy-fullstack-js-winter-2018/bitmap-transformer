@@ -1,3 +1,4 @@
+const pink = require('../lib/warm-transformer');
 const invert = require('../lib/invert-transformer');
 const grayscale = require('../lib/grayscale-transformer');
 
@@ -34,13 +35,18 @@ describe('transformers', () => {
     });
   });
 
-  // TODO: add a third transformer (you'll need to add the module and require!) and test
-  // it('changes color to...', () => {
-  //   const colorchanged = colorChange({
-  //     r: 34,
-  //     g: 100,
-  //     b: 205
-  //   });
-  // });
+  it('changes color to pink', () => {
+    const transformed = pink({
+      r: 34,
+      g: 100,
+      b: 205
+    });
+
+    expect(transformed).toEqual({
+      r: 134,
+      g: 155,
+      b: 50
+    });
+  });
 
 });
