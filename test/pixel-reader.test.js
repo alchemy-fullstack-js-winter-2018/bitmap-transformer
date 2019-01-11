@@ -13,35 +13,35 @@ describe('Pixel Reader', () => {
     });
 
     reader.on('end', () => {
-      //d write deepEqual assertion for colors versus the
-      // expected rgb color objects
       expect(colors).toHaveLength(3);
-      expect(colors[0]).toEqual({ //white
+      //black     
+      expect(colors[0]).toEqual({
         offset: 0,
         r: 0,
         g: 0,
         b: 0
       });
-
-      expect(colors[1]).toEqual({ //white
-        offset: 24,
+      //white - 6
+      expect(colors[1]).toEqual({
+        offset: 3,
         r: 255,
         g: 255,
         b: 255
       });
-
-      expect(colors[2]).toEqual({ //white
-        offset: 48,
+      //blue - 48
+      expect(colors[2]).toEqual({
+        offset: 6,
         r: 0,
         g: 0,
         b: 255
       });
 
-      // Don't forget to call done()!
+      reader.read(buffer);
+      done();
     });
 
     // Create a buffer with known data for your colors
-    const buffer = Buffer.alloc(24 * 3); // for three pixels
+    const buffer = Buffer.alloc(9); // for three pixels
     // TODO: fill buffer with byte values that match your 
     // expected test colors
     buffer.writeUInt8(0);  //  black
