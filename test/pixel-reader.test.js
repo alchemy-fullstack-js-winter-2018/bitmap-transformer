@@ -20,14 +20,14 @@ describe('Pixel Reader', () => {
       });
 
       expect(colors[1]).toEqual({
-        offset: 24,
+        offset: 3,
         r: 255,
         g: 255,
         b: 255
       });
       
       expect(colors[2]).toEqual({
-        offset: 48,
+        offset: 6,
         r: 0,
         g: 0,
         b: 255
@@ -36,19 +36,18 @@ describe('Pixel Reader', () => {
       done();
     });
 
-    // Create a buffer with known data for your colors
     const buffer = Buffer.alloc(9); // for three pixels
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
+    buffer.writeUInt8(0, 0);
+    buffer.writeUInt8(0, 1);
+    buffer.writeUInt8(0, 2);
 
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(255);
+    buffer.writeUInt8(255, 3);
+    buffer.writeUInt8(255, 4);
+    buffer.writeUInt8(255, 5);
 
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
+    buffer.writeUInt8(255, 6);
+    buffer.writeUInt8(0, 7);
+    buffer.writeUInt8(0, 8);
 
     reader.read(buffer);
   });
