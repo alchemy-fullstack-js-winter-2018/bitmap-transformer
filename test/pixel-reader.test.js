@@ -16,7 +16,6 @@ describe('Pixel Reader', () => {
             g: 0,
             r: 0
         }
-
         {
             offset: 3,
             b: 255,
