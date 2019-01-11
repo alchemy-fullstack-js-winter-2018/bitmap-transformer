@@ -13,7 +13,7 @@ describe('Pixel Reader', () => {
       colors.push(color);
     });
     
-    console.log('test1', colors);
+    // console.log('test1', colors);
     reader.on('end', () => {
       expect(colors).toHaveLength(3);
       expect(colors[0]).toEqual({
