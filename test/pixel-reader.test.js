@@ -9,12 +9,7 @@ describe('Pixel Reader', () => {
 
     // TODO: subscribe to reader "color" event and push into `colors` array.
     // A "color" object should look like:
-    // {
-    //     offset: <offset from the start of buffer passed to PixelReader>,
-    //     r: <red color value>,
-    //     g: <green color value>,
-    //     b: <blue color value>,
-    // }
+    
     reader.on('color', color => {
       colors.push(color);
     });
