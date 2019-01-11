@@ -7,6 +7,7 @@ describe('Pixel Reader', () => {
         
     const colors = [];
 
+    
     // TODO: subscribe to reader "color" event and push into `colors` array.
     // A "color" object should look like:
     // {
@@ -50,16 +51,16 @@ describe('Pixel Reader', () => {
     // TODO: fill buffer with byte values that match your 
     // expected test colors
     buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
+    buffer.writeUInt8(0, 1);
+    buffer.writeUInt8(0, 2);
 
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(255);
+    buffer.writeUInt8(255, 3);
+    buffer.writeUInt8(255, 4);
+    buffer.writeUInt8(255, 5);
 
-    buffer.writeUInt8(255);
-    buffer.writeUInt8(0);
-    buffer.writeUInt8(0);
+    buffer.writeUInt8(255, 6);
+    buffer.writeUInt8(0, 7);
+    buffer.writeUInt8(0, 8);
     // Call read method with your buffer
     reader.read(buffer);
   });

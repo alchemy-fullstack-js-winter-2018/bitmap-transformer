@@ -1,12 +1,12 @@
-const assert = require('assert');
 const { readFileSync } = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
-const invert = require('../lib/invert-transform');
+const invert = require('../lib/invert-transformer');
 
 describe('bitmap file transformer', () => {
     
     let buffer = null;
     beforeEach(() => {
+        buffer = readFileSync('./test/test-bitmap.bmp');
         // TODO: file read sync './test/test-bitmap.bmp' into buffer variable
     });
 
@@ -26,7 +26,7 @@ describe('bitmap file transformer', () => {
     
             // Read the output file we saved earlier as the "standard" expected output file.
             const expected = readFileSync('./test/inverted-expected.bmp')
-            assert.deepEqual(bitmap.buffer, expected);
+            expect(bitmap.buffer).toEqual(expected);
             done();
 
             // If you don't have a standard file yet, or need to update or are adding new test,
