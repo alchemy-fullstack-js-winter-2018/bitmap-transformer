@@ -28,8 +28,8 @@ describe('bitmap header', () => {
     // on the BitmapHeader in its constructor.
     // These test values are correct for the supplied test-bitmap.bmp
     const header = new BitmapHeader(buffer);
-    expect.equal(header.pixelOffset, 54);
-    expect.equal(header.bitsPerPixel, 24);
-    expect.equal(header.fileSize, 30054);
+    expect(header.pixelOffset).toEqual(54);
+    expect(header.bitsPerPixel).toEqual(24);
+    expect(header.fileSize).toEqual(30054);
   });
 });
