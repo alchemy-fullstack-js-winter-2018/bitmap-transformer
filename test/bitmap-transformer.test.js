@@ -35,6 +35,5 @@ describe('bitmap file transformer', () => {
             // that writes the file and then visually inspect the file for correctness.
             // return fs.writeFileSync('./test/inverted-expected.bmp', bitmap.buffer);
         });
-
     });
 });

@@ -6,31 +6,7 @@ describe('Pixel Reader', () => {
         const reader = new PixelReader({ bitsPerPixel: 24 });
         
         const colors = [];
-        // example?
-        /*
-        [0, 0, 0, 255, 255, 255, 255, 0, 0]
-
-        {
-            offset: 0,
-            b: 0,
-            g: 0,
-            r: 0
-        }
-        {
-            offset: 3,
-            b: 255,
-            g: 255,
-            r: 255
-        }
-
-        {
-            offset: 6,
-            b: 255,
-            g: 0,
-            r: 0
-        }
-        */
-
+        
         reader.on('color', color=> {
             colors.push(color);
 
@@ -66,16 +42,18 @@ describe('Pixel Reader', () => {
         buffer.writeUInt8(0);
         buffer.writeUInt8(0, 1);
         buffer.writeUInt8(0, 2);
+
         //white
         buffer.writeUInt8(255, 3);
         buffer.writeUInt8(255, 4);
         buffer.writeUInt8(255, 5);
+
         // BLUE
         buffer.writeUInt8(255, 6);
         buffer.writeUInt8(0, 7);
         buffer.writeUInt8(0, 8);
+
         // Call read method with your buffer
         reader.read(buffer);
     });
-
 });
