@@ -2,13 +2,12 @@ const assert = require('assert');
 const { readFileSync } = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
-const grayscale = ('require/lib/grayscale-transformer');
 
 describe('bitmap file transformer', () => {
     
   let buffer = null;
   beforeEach(() => {
-    buffer = readFileSync('./test/test-bitmap.bmp')
+    buffer = readFileSync('./test/test-bitmap.bmp');
     // TODO: file read sync './test/test-bitmap.bmp' into buffer variable
   });
 
