@@ -1,4 +1,3 @@
-const assert = require('assert');
 const PixelReader = require('../lib/pixel-reader');
 
 describe('Pixel Reader', () => {
@@ -16,7 +15,6 @@ describe('Pixel Reader', () => {
         };
         colors.push(colorObj);
 
-        reader.read();
         reader.on('color', colorObj=> {
             colors.push(colorObj);
 
@@ -30,13 +28,13 @@ describe('Pixel Reader', () => {
                 b: 0
             });
             expect(colors[1]).toEqual({
-                offset: 24,
+                offset: 3,
                 r: 255, 
                 g: 255, 
                 b: 255
             });
             expect(colors[2]).toEqual({
-                offset: 48,
+                offset: 6,
                 r: 0, 
                 g: 0, 
                 b: 255
@@ -45,7 +43,7 @@ describe('Pixel Reader', () => {
         });
 
         // Create a buffer with known data for your colors
-        const buffer = Buffer.alloc(24 * 3); // for three pixels
+        const buffer = Buffer.alloc(9); // for three pixels
         // TODO: fill buffer with byte values that match your 
         // expected test colors
         //BLACK
