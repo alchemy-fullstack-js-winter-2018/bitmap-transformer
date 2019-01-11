@@ -35,4 +35,12 @@ describe('transformers', () => {
   });
 
   // TODO: add a third transformer (you'll need to add the module and require!) and test
+  // it('changes color to...', () => {
+  //   const colorchanged = colorChange({
+  //     r: 34,
+  //     g: 100,
+  //     b: 205
+  //   });
+  // });
+
 });
