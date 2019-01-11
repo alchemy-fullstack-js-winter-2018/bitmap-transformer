@@ -1,4 +1,3 @@
-const assert = require('assert');
 const PixelReader = require('../lib/pixel-reader');
 
 describe('Pixel Reader', () => {
@@ -16,6 +15,9 @@ describe('Pixel Reader', () => {
     //     g: <green color value>,
     //     b: <blue color value>,
     // }
+    reader.on('color', color => {
+      colors.push(color);
+    });
 
     reader.on('end', () => {
       expect(colors).toHaveLength(3);
@@ -40,7 +42,6 @@ describe('Pixel Reader', () => {
       done();
       // write deepEqual assertion for colors versus the
       // expected rgb color objects
-
       // Don't forget to call done()!
     });
 
