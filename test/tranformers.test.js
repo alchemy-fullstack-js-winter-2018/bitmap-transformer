@@ -1,6 +1,7 @@
 
 const invert = require('../lib/invert-transformer');
 const grayscale = require('../lib/grayscale-transformer');
+const grayscaleTwo = require('../lib/grayscaletwo-transformer');
 
 describe('transformers', () => {
 
@@ -36,8 +37,18 @@ describe('transformers', () => {
   });
 
   // TODO: add a third transformer (you'll need to add the module and require!) and test
-  // it('different grayscale', () => {
-  //     const transformed = 
+  it('grayscaleTwo', () => {
+    const transformed = grayscaleTwo({
+      r: 17,
+      g: 133,
+      b: 225
+    });
+    
+    expect(transformed).toEqual({
+      r: 125,
+      g: 125,
+      b: 125
+    });
 
-  // })
+  });
 });
