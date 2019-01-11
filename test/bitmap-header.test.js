@@ -6,10 +6,10 @@ describe('bitmap header', () => {
 
   let buffer = null;
   beforeEach(done => {
-    fs.readFile('./test-bitmap.bmp', (err, data => {
+    fs.readFile('./test-bitmap.bmp', (err, data) => {
       buffer = data;
-      done();
-    }));
+      done(err);
+    });
   });
 
   it('has correct specs', () => {
