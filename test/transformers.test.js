@@ -1,6 +1,7 @@
 
 const invert = require('../lib/invert-transformer');
 const grayscale = require('../lib/grayscale-transformer');
+const luminosity = require('../lib/luminosity-transformer');
 
 describe('transformers', () => {
 
@@ -34,11 +35,24 @@ describe('transformers', () => {
       b: 113
     });
 
-    // assert.deepEqual(transformed, {
+    // transformed.assert.deepEqual(transformed, {
     //   r: 113,
     //   g: 113,
     //   b: 113
     // });
   });
-  // TODO: add a third transformer (you'll need to add the module and require!) and test
+
+  it('luminosity', () => {
+    const transformed = luminosity({
+      r: 34,
+      g: 100,
+      b: 205
+    });
+    // luminosity grayscale formula: 0.21 R + 0.72 G + 0.07 B
+    expect(transformed).toBeCloseTo({
+      r: 7.14,
+      g: 72,
+      b: 14.35
+    });
+  });
 });
