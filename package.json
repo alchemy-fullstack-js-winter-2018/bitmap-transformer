@@ -1,0 +1,30 @@
+{
+  "name": "bitmap-transformer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "lint": "eslint .",
+    "pretest": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sophiegraham/bitmap-transformer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sophiegraham/bitmap-transformer/issues"
+  },
+  "homepage": "https://github.com/sophiegraham/bitmap-transformer#readme",
+  "dependencies": {
+    "eslint": "^5.12.0",
+    "jest": "^23.6.0"
+  }
+}
