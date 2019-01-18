@@ -49,10 +49,10 @@ describe('transformers', () => {
       b: 205
     });
     // luminosity grayscale formula: 0.21 R + 0.72 G + 0.07 B
-    expect(transformed).toBeCloseTo({
-      r: 7.14,
+    expect(transformed).toEqual({
+      r: 7,
       g: 72,
-      b: 14.35
+      b: 14
     });
   });
 });
